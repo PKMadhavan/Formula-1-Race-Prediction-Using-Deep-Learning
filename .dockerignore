@@ -1,0 +1,13 @@
+.git
+.gitkeep
+__pycache__
+*.pyc
+*.pyo
+.env
+.env.*
+!.env.example
+data/raw/
+data/fastf1_cache/
+*.ipynb
+*.pdf
+tests/
