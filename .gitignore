@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Jupyter (keep original notebook out of production folder)
+*.ipynb
+
+# Data — raw CSVs and cache (too large for git)
+data/raw/
+data/fastf1_cache/
+data/processed/
+
+# Trained model artifacts (use MLflow or DVC instead)
+artifacts/models/*.pt
+artifacts/scalers/*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
