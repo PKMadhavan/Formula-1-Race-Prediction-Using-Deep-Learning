@@ -1,0 +1,51 @@
+project:
+  name: f1-race-predictor
+  version: "1.0.0"
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  sequence_length: 5
+  random_seed: 42
+
+models:
+  lap_time:
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.3
+    driver_embed_dim: 8
+    circuit_embed_dim: 4
+    epochs: 10
+    batch_size: 64
+    learning_rate: 0.001
+
+  pit_stop:
+    hidden_dims: [64, 32]
+    dropout: 0.0
+    epochs: 10
+    batch_size: 256
+    learning_rate: 0.001
+    threshold: 0.75
+
+  position:
+    hidden_dims: [64, 32]
+    dropout: 0.2
+    epochs: 100
+    learning_rate: 0.001
+
+artifacts:
+  models_dir: artifacts/models
+  scalers_dir: artifacts/scalers
+
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "f1-race-predictor"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+redis:
+  host: localhost
+  port: 6379
+  ttl_seconds: 300
